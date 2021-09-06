@@ -4,19 +4,18 @@
     <title>Sign Up</title>
     <link rel="stylesheet" type="text/css" media="all" href="css/loginStyle.css"  />
     <script src="login.js" type="application/javascript"></script>
-
 </head>
 <body>
 <h1>Register/Login</h1>
-<form action="/users/sign-up" method="post">
+<form id="entryForm" action="/users/sign-up" method="post">
     <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><label> Department: <select id="department"><option>--Select--</option></select> </label></div>
+    <div><label> Password: <input type="password" name="password" minlength="7"/> </label></div>
+    <div><label> Department: <select id="department" name="department"><option>--Select--</option></select> </label></div>
     <div><input type="submit" value="Sign Up"/></div>
 </form>
 <form action="/login" method="post">
     <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><label> Password: <input type="password" name="password" /> </label></div>
     <div><input type="submit" value="Sign In"/></div>
 </form>
 </body>
