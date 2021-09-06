@@ -14,8 +14,9 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-
+    //Tasks werden aufgelistet
     public List<Task> findAll() {
         return taskRepository.findAll();
     }
+
 }

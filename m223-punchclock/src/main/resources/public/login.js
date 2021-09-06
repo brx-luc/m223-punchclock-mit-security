@@ -24,7 +24,7 @@ const createUser = (e) => {
     const user = {};
     user['username'] = formData.get('username');
     user['password'] = formData.get('password');
-    user['department'] = {id:formData.get(departments['departmentName'])};
+    user['department'] = {id:formData.get('departmentName')};
 
     fetch(`${URL}/users/sign-up`, {
         method: 'POST',
@@ -37,6 +37,29 @@ const createUser = (e) => {
     console.log(user);
 };
 
+let resp = {};
+let bearer_token ="";
+const login = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const user = {};
+    user['username'] = formData.get('username');
+    user['password'] = formData.get('password');
+    fetch(`${URL}/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    }).then((result) => {
+        resp = result;
+        console.log(result);
+        bearer_token = result.headers.get('authorization');
+        localStorage.setItem('bearer', bearer_token);
+        console.log(bearer_token);
+    });
+}
+document.getElementById('login').addEventListener('click',login);
 document.addEventListener('DOMContentLoaded', function(){
     const entryForm = document.querySelector('#entryForm');
     entryForm.addEventListener('submit', createUser);

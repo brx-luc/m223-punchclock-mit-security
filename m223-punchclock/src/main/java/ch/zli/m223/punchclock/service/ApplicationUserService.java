@@ -28,7 +28,4 @@ public class ApplicationUserService implements UserDetailsService {
         return new User(applicationUser.getUsername(), applicationUser.getPassword(), emptyList());
     }
 
-    public ApplicationUser findByUsername(String username){
-        return applicationUserRepository.findByUsername(username);
-    }
 }

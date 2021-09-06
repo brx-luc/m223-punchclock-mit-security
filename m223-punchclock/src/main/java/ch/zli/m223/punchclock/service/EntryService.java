@@ -14,10 +14,12 @@ public class EntryService {
         this.entryRepository = entryRepository;
     }
 
+    //Neuer Engtry wird erstellt
     public Entry createEntry(Entry entry) {
         return entryRepository.saveAndFlush(entry);
     }
 
+    //Erstellte Entries werden aufgelistet
     public List<Entry> findAll() {
         return entryRepository.findAll();
     }

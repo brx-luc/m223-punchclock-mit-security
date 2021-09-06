@@ -14,6 +14,7 @@ public class DepartmentService {
         this.departmentRepository = departmentRepository;
     }
 
+    //findAll listet alle Departments auf und gibt sie als JSON aus
     public List<Department> findAll() {
         return departmentRepository.findAll();
     }
