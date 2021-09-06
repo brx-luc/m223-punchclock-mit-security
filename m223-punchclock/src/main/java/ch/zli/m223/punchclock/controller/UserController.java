@@ -40,6 +40,7 @@ public class UserController {
         applicationUserRepository.save(user);
     }
 
+    //Mapping um User zu löschen
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUser(@PathVariable long id) {

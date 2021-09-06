@@ -59,7 +59,8 @@ const login = (e) => {
         console.log(bearer_token);
     });
 }
-document.getElementById('login').addEventListener('click',login);
+//document.getElementById('login').addEventListener('click',login);
+
 document.addEventListener('DOMContentLoaded', function(){
     const entryForm = document.querySelector('#entryForm');
     entryForm.addEventListener('submit', createUser);
