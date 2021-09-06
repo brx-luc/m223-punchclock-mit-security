@@ -3,7 +3,6 @@ let entries = [];
 let tasks = [];
 let mode = 'create';
 let currentEntry;
-let select = document.getElementById("dropdown");
 
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
@@ -23,8 +22,6 @@ const populateDropdown = () =>{
                 document.getElementById("dropdown").appendChild(el);
             }
         });
-
-
     });
 }
 
@@ -52,7 +49,6 @@ const indexEntries = () => {
             entries = result;
             renderEntries();
         });
-        console.log(entries);
     });
     renderEntries();
 };
@@ -95,6 +91,7 @@ const saveForm = (e) => {
     const entry = {};
     entry['checkIn'] = dateAndTimeToDate(formData.get('checkInDate'), formData.get('checkInTime'));
     entry['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate'), formData.get('checkOutTime'));
+    entry['task'] = {id:formData.get(tasks['id'])};
 
     if (mode === 'create') {
         createEntry(entry);
@@ -150,6 +147,7 @@ const renderEntries = () => {
         row.appendChild(createCell(entry.id));
         row.appendChild(createCell(new Date(entry.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(entry.checkOut).toLocaleString()));
+        row.appendChild(createCell(entry.task));
         row.appendChild(createActions(entry));
         display.appendChild(row);
     });

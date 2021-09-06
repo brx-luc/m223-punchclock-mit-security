@@ -19,6 +19,7 @@ public class TaskController {
         this.taskService = taskService;
     }
 
+    //Die vordefinierten Tasks werden in einem JSON aufgelistat und angezeigt
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Task> getAllTasks() {

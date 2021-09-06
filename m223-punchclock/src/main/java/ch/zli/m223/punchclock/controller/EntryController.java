@@ -17,7 +17,7 @@ public class EntryController {
         this.entryService = entryService;
     }
 
-    //Gibt die Liste aller erstellten Entries aus
+    //Gibt die Liste aller erstellten Entries aus, über den URL http://localhost:8081/entries
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Entry> getAllEntries() {

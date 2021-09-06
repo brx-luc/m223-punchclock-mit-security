@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import static ch.zli.m223.punchclock.config.SecurityConstants.SIGN_UP_URL;
 
 @EnableWebSecurity
-public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter implements ch.zli.m223.punchclock.config.WebMvcConfigurer {
+public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
     private ApplicationUserService userDetailsService;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 

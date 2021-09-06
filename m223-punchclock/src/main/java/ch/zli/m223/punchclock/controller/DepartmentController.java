@@ -19,6 +19,8 @@ public class DepartmentController {
         this.departmentService = departmentService;
     }
 
+
+    //Die vordefinierten Departments werden in einem JSON aufgelistet und angezeigt
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Department> getAllDepartments() {
