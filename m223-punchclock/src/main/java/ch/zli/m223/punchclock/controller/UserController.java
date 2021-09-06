@@ -1,18 +1,15 @@
 package ch.zli.m223.punchclock.controller;
 
 import ch.zli.m223.punchclock.domain.ApplicationUser;
-import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.repository.ApplicationUserRepository;
 import ch.zli.m223.punchclock.service.ApplicationUserService;
-import org.glassfish.jersey.jaxb.internal.XmlJaxbElementProvider;
-import org.glassfish.jersey.jaxb.internal.XmlRootElementJaxbProvider;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -54,6 +51,10 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public ApplicationUser updateUser(@Valid @RequestBody ApplicationUser user) {
         return applicationUserService.updateUser(user);
+    }
+
+    public Optional<ApplicationUser> findById(Long id){
+        return applicationUserService.findById(id);
     }
 
 }

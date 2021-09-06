@@ -16,6 +16,7 @@ const populateDropdown = () =>{
             tasks = result;
             for (let i = 0; i <tasks.length; i++){
                 let options = tasks[i]['taskName'];
+                let value = tasks[i]['id'];
                 let el = document.createElement("option");
                 el.textContent = options;
                 el.value = options;
@@ -33,6 +34,7 @@ const populateDropdownUsers = () =>{
             users = result;
             for (let i = 0; i <users.length; i++){
                 let options = users[i]['username'];
+                let value = users[i]['id'];
                 let el = document.createElement("option");
                 el.textContent = options;
                 el.value = options;
