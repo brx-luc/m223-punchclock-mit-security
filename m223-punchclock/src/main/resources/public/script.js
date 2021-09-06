@@ -1,11 +1,32 @@
 const URL = 'http://localhost:8081';
 let entries = [];
+let tasks = [];
 let mode = 'create';
 let currentEntry;
+let select = document.getElementById("dropdown");
 
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
 };
+
+const populateDropdown = () =>{
+    fetch(`${URL}/tasks`, {
+        method: 'GET'
+    }).then((result) => {
+        result.json().then((result) => {
+            tasks = result;
+            for (let i = 0; i <tasks.length; i++){
+                let options = tasks[i]['taskName'];
+                let el = document.createElement("option");
+                el.textContent = options;
+                el.value = options;
+                document.getElementById("dropdown").appendChild(el);
+            }
+        });
+
+
+    });
+}
 
 // API Requests
 const createEntry = (entry) => {
@@ -31,6 +52,7 @@ const indexEntries = () => {
             entries = result;
             renderEntries();
         });
+        console.log(entries);
     });
     renderEntries();
 };
@@ -52,6 +74,7 @@ const updateEntry = (entry) => {
         body: JSON.stringify(entry)
     }).then((result) => {
         result.json().then((entry) => {
+            console.log(result);
             entries = entries.map((e) => e.id === entry.id ? entry : e);
             renderEntries();
         });
@@ -137,4 +160,6 @@ document.addEventListener('DOMContentLoaded', function(){
     entryForm.addEventListener('submit', saveForm);
     entryForm.addEventListener('reset', resetForm);
     indexEntries();
+    populateDropdown();
+
 });
