@@ -1,5 +1,10 @@
 # M223: Punchclock
 Dies ist eine Beispielapplikation für das Modul M223.
+Mit Hilfe dieser Applikation können Entries erstellt werden, in denenen 
+festgehalten wird, wann ein Mitarbeiter angefangen hat zu arbeiten und wass er mit der Arbeit fertig ist.
+Jeder User ist einem Department angehängt und hat jeweils einen Task, welcher auch in der Entry festgehalten wird.
+Damit der User einer Entry erstellen kann, muss er sich registrieren und mit den Anmeldedaten einloggen. 
+Sobald er eingeloggt ist, kann er eine neue Entry erstellen, sie bearbeiten und löschen.
 
 ## Loslegen
 Folgende Schritte befolgen um loszulegen:
