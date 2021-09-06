@@ -31,6 +31,7 @@ public class ApplicationUserService implements UserDetailsService {
         return new User(applicationUser.getUsername(), applicationUser.getPassword(), emptyList());
     }
 
+    //Auflistung aller User
     public List<ApplicationUser> findAll() {
         return applicationUserRepository.findAll();
     }

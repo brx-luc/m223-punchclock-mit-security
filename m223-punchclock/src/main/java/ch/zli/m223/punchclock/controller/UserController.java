@@ -27,6 +27,7 @@ public class UserController {
         this.applicationUserService = applicationUserService;
     }
 
+    //Auflistung aller User
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ApplicationUser> getAllUsers() {

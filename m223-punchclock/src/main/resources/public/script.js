@@ -109,6 +109,7 @@ const saveForm = (e) => {
     entry['checkIn'] = dateAndTimeToDate(formData.get('checkInDate'), formData.get('checkInTime'));
     entry['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate'), formData.get('checkOutTime'));
     entry['task'] = {id:formData.get(tasks['id'])};
+    entry['user'] = {id:formData.get(users['id'])};
 
     if (mode === 'create') {
         createEntry(entry);
