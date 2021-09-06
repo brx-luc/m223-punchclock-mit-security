@@ -6,6 +6,10 @@ Jeder User ist einem Department angehängt und hat jeweils einen Task, welcher a
 Damit der User einer Entry erstellen kann, muss er sich registrieren und mit den Anmeldedaten einloggen. 
 Sobald er eingeloggt ist, kann er eine neue Entry erstellen, sie bearbeiten und löschen.
 
+## Beispieldaten
+In der Applikation gibt es eine import.sql-Datei. Mit dieser werden Testdaten beim starten der Appliaktion
+in die Datenbank geladen. Es muss nichts weiteres gemacht werden, die Daten werden automatisch beim Start eingefügt.
+
 ## Loslegen
 Folgende Schritte befolgen um loszulegen:
 1. Sicherstellen, dass JDK 12 installiert und in der Umgebungsvariable `path` definiert ist.
