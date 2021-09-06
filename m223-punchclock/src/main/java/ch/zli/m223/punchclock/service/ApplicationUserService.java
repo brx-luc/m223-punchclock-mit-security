@@ -2,6 +2,7 @@ package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.ApplicationUser;
 import ch.zli.m223.punchclock.repository.ApplicationUserRepository;
+import org.glassfish.jersey.jaxb.internal.XmlJaxbElementProvider;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,5 +26,9 @@ public class ApplicationUserService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         return new User(applicationUser.getUsername(), applicationUser.getPassword(), emptyList());
+    }
+
+    public ApplicationUser findByUsername(String username){
+        return applicationUserRepository.findByUsername(username);
     }
 }

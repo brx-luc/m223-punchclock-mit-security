@@ -1,5 +1,6 @@
 const URL = 'http://localhost:8081';
 let users = [];
+let bearer = "";
 const createUser = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -20,5 +21,9 @@ const createUser = (e) => {
     });
 };
 
+const login = (e) =>
+{
+
+}
 const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', createUser);
