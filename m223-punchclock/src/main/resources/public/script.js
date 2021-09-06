@@ -23,6 +23,23 @@ const populateDropdown = () =>{
             }
         });
     });
+
+}
+const populateDropdownUsers = () =>{
+    fetch(`${URL}/users`, {
+        method: 'GET'
+    }).then((result) => {
+        result.json().then((result) => {
+            users = result;
+            for (let i = 0; i <users.length; i++){
+                let options = users[i]['username'];
+                let el = document.createElement("option");
+                el.textContent = options;
+                el.value = options;
+                document.getElementById("user").appendChild(el);
+            }
+        });
+    });
 }
 
 // API Requests
@@ -148,6 +165,7 @@ const renderEntries = () => {
         row.appendChild(createCell(new Date(entry.checkIn).toLocaleString()));
         row.appendChild(createCell(new Date(entry.checkOut).toLocaleString()));
         row.appendChild(createCell(entry.task));
+        row.appendChild(createCell(entry.user));
         row.appendChild(createActions(entry));
         display.appendChild(row);
     });
@@ -159,5 +177,6 @@ document.addEventListener('DOMContentLoaded', function(){
     entryForm.addEventListener('reset', resetForm);
     indexEntries();
     populateDropdown();
+    populateDropdownUsers();
 
 });

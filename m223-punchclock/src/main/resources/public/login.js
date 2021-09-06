@@ -1,7 +1,7 @@
 let departments = [];
 const URL = 'http://localhost:8081';
 let users = [];
-const populateDropdown = () =>{
+const populateDropdownDepartment = () =>{
     fetch(`${URL}/departments`, {
         method: 'GET'
     }).then((result) => {
@@ -63,5 +63,5 @@ document.getElementById('login').addEventListener('click',login);
 document.addEventListener('DOMContentLoaded', function(){
     const entryForm = document.querySelector('#entryForm');
     entryForm.addEventListener('submit', createUser);
-    populateDropdown();
+    populateDropdownDepartment();
 });
