@@ -19,6 +19,7 @@ public class UserController {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
+    //Ein neuer User wird durch die Registrierung erstellt
     @PostMapping("/sign-up")
     public void signUp(@RequestBody ApplicationUser user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -26,20 +27,13 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(Model model, String error, String logout){
+    public String login(Model model, String error, String logout) {
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
 
         if (logout != null)
             model.addAttribute("message", "You have been logged out successfully.");
 
-        return "login.html";
-    }
-
-    @GetMapping("/entries")
-    public String entries(Model model){
         return "entries.html";
     }
-
-
 }

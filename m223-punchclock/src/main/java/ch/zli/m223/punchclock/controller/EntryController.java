@@ -17,12 +17,14 @@ public class EntryController {
         this.entryService = entryService;
     }
 
+    //Gibt die Liste aller erstellten Entries aus
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Entry> getAllEntries() {
         return entryService.findAll();
     }
 
+    //Mit diesem POST-Request wird ein neuer Entry erstellt
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Entry createEntry(@Valid @RequestBody Entry entry) {
