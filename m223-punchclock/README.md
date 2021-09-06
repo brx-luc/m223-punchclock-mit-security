@@ -1,4 +1,4 @@
-# M223: Punchclock*
+# M223: Punchclock**
 Dies ist eine Beispielapplikation für das Modul M223.
 Mit Hilfe dieser Applikation können Entries erstellt werden, in denenen 
 festgehalten wird, wann ein Mitarbeiter angefangen hat zu arbeiten und wann er mit der Arbeit fertig ist.
@@ -22,5 +22,7 @@ Folgende Dienste stehen während der Ausführung im Profil `dev` zur Verfügung:
 - REST-Schnittstelle der Applikation: http://localhost:8081
 - Dashboard der H2 Datenbank: http://localhost:8081/h2-console
 
-* _Die Backend-Funktionen wurden mit Postman überprüft. Registrierung und Login geben den Status 200 zurück.
-Auch das erstellen einer Entry funktioniert im Postman, so fern man die Constraints beachtet und die notwendigen Daten im JSON mitsendet._
+
+** _Die Backend-Funktionen wurden mit Postman überprüft. Registrierung und Login geben den Status 200 zurück. 
+  Auch das erstellen einer Entry funktioniert im Postman, so fern man die Constraints beachtet und die notwendigen Daten im JSON mitsendet.
+  Das Frontend ist zwar vorhanden und wird angezeigt, die Funktionen funktionieren jedoch nicht._
